@@ -1,0 +1,138 @@
+.main-chat {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 15rem;
+    width: 20rem;
+    height: 30rem;
+}
+
+.chat-header {
+    background-color: #171717;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.chat-header p {
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.chat-body {
+    height: 78%;
+    color: #000;
+    border-radius: 0.2rem;
+}
+
+.chat-footer {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-send-message {
+    width: 85%;
+    border: none;
+    background-color: #fff;
+    outline: none;
+    color: #000;
+    padding: 0.4rem;
+    font-size: 1rem;
+}
+
+.btn-send-message {
+    width: 14%;
+    border: none;
+    outline: none;
+    color: #338f49;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.btn-send-message:active {
+    color: #62a672;
+}
+
+.border-r {
+    border-radius: 0.5rem;
+}
+
+.message-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.message-container::-webkit-scrollbar {
+    display: none;
+}
+
+.message {
+    height: auto;
+    padding: 10px;
+    display: flex;
+}
+
+.message-content {
+    width: auto;
+    height: auto;
+    min-height: 40px;
+    max-width: 120px;
+    background-color: #43a047;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+#you {
+    justify-content: flex-start;
+}
+
+#you .message-content {
+    justify-content: flex-start;
+}
+
+#you .message-meta {
+    justify-content: flex-start;
+    margin-left: 5px;
+}
+
+#other {
+    justify-content: flex-end;
+}
+
+#other .message-content {
+    justify-content: flex-end;
+    background-color: cornflowerblue;
+}
+
+#other .message-meta {
+    justify-content: flex-end;
+    margin-right: 5px;
+}
+
+.message-meta #author {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.message-meta {
+    display: flex;
+    font-size: 12px;
+}

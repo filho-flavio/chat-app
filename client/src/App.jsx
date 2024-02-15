@@ -1,7 +1,7 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import io from 'socket.io-client'
-import Chat from './Chat';
+import Chat from './components/Chat';
 
 const socket = io.connect("http://localhost:3001")
 
@@ -17,23 +17,16 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    socket.on("receive_message", (data) => {
-      console.log(data)
-    })
-  }, [socket])
-
-
   return (
     <>
       {showChat ? (
         <Chat socket={socket} userName={userName} room={room} />
       ) : (
-        <div>
-          <h3>Join A Chat</h3>
-          <input type="text" placeholder='Jhon...' onChange={(e) => setName(e.target.value)} />
-          <input type="text" placeholder='Room ID...' onChange={(e) => setRoom(e.target.value)} />
-          <button onClick={joinRoom}>Join A Room</button>
+        <div className="container-chat">
+          <h3 className="title-chat">Join A Chat</h3>
+          <input className="input-chat" type="text" placeholder='Your name...' onChange={(e) => setName(e.target.value)} />
+          <input className="input-chat" type="text" placeholder='Room ID...' onChange={(e) => setRoom(e.target.value)} />
+          <button className="btn-chat" onClick={joinRoom}>Join A Room</button>
         </div>
       )}
     </>

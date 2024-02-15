@@ -28,7 +28,7 @@ io.on("connection", (socket) => {
     socket.to(data.room).emit("receive_message", data);
   })
 
-  io.on("disconnect", () => {
+  io.on("disconnect", (socket) => {
     console.log("Client disconnected", socket.id);
   });
 });
